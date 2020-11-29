@@ -9,9 +9,9 @@ class Home extends Component {
     return (
       <div className="HomePage">
         <SearchForm />
-        {/* {this.props.loading ? <SpinnerLoad /> :  */}
+        {this.props.loading ? <SpinnerLoad /> : 
         <MoviesContainer />
-        {/* } */}
+        }
       </div>
     );
   }

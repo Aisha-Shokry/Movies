@@ -131,7 +131,7 @@ class MovieDetails extends Component {
     );
 
     let content = loading ? <SpinnerLoad /> : movieInfo;
-    return <div style={{ margin: "50px 0 100px" }}>{movieInfo}</div>;
+    return <div style={{ margin: "50px 0 100px" }}>{content}</div>;
   }
 }
 const mapStateToProps = state => ({
