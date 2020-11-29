@@ -12,7 +12,7 @@ class MoviesContainer extends Component {
           ))
         : null;
     return (
-      <Container>
+      <Container className='mb-5 mt-5'>
         <Row>{content}</Row>
       </Container>
     );

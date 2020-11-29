@@ -2,7 +2,11 @@ import React, { Component } from "react";
 import { Form, Button, Container } from "react-bootstrap";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { searchMovie, fetchMovies } from "../../redux/actions/MoviesAction";
+import {
+  searchMovie,
+  fetchMovies,
+  setLoading
+} from "../../redux/actions/MoviesAction";
 class SearchForm extends Component {
   onTypeSearch = e => {
     this.props.searchMovie(e.target.value);
@@ -10,6 +14,7 @@ class SearchForm extends Component {
   onSearch = e => {
     e.preventDefault();
     this.props.fetchMovies(this.props.text);
+    this.props.setLoading();
   };
   render() {
     return (
@@ -30,7 +35,12 @@ class SearchForm extends Component {
             />
           </Form.Group>
 
-          <Button variant="primary" type="submit" onClick={this.onSearch}>
+          <Button
+            variant="primary"
+            type="submit"
+            className="search-btn"
+            onClick={this.onSearch}
+          >
             Search
           </Button>
         </Form>
@@ -43,6 +53,6 @@ const mapStateToProps = state => ({
   text: state.movieslist.text
 });
 const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ searchMovie, fetchMovies }, dispatch);
+  return bindActionCreators({ searchMovie, fetchMovies, setLoading }, dispatch);
 };
 export default connect(mapStateToProps, mapDispatchToProps)(SearchForm);

@@ -12,7 +12,7 @@ export default class componentName extends Component {
                 Developed By :
                 <span
                   className="pl-2 font-weight-bold"
-                  style={{ color: "#b30000" }}
+                  style={{ color: "rosybrown" }}
                 >
                   Aisha Shokry
                 </span>

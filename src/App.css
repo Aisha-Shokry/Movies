@@ -1,19 +1,81 @@
 /*Search Form*/
+.HomePage {
+    margin: 50px 0 100px !important;
+}
+
 .form-container {
-    background-color: mistyrose;
+    background-color: rosybrown;
+    color: #fff;
 }
 
 /*NavBar*/
-.navbar-brand {
-    color: #fff !important;
+.navbar-brand a {
+    color: rosybrown !important;
     padding: 0 30px;
 }
 
+.navbar-brand a:hover {
+    text-decoration: none;
+}
 
 /*FOOTER*/
 .homefooter {
     position: fixed;
     bottom: 0 !important;
     width: 100% !important;
-margin-top:50px;
+    margin-top: 50px;
+}
+
+/*Card*/
+
+.cardstyle {
+    height: 100% !important;
+    margin: 5px !important;
+}
+
+.submit-btn {
+    position: absolute;
+    bottom: 15px !important;
+    background-color: rosybrown;
+    border: none !important;
+}
+
+.submit-btn:hover,
+.submit-btn:active {
+    background-color: rosybrown !important;
+}
+
+.submit-btn a,
+.search-btn a {
+    color: #fff !important;
+    text-decoration: none !important;
+}
+
+.search-btn {
+
+    background-color: black !important;
+    border: none !important;
+}
+
+.search-btn:hover,
+.search-btn:active {
+    background-color: black !important;
+}
+
+.movieDetails h5 {
+    font-weight: bold !important;
+}
+
+.movieDetails h6 {
+    color: rosybrown;
+
+}
+
+.movieDetails .row {
+    margin-top: 20px !important;
+}
+
+.viewimdb-btn {
+    background-color: rgb(245, 222, 80);
+    margin: 40px auto;
 }
