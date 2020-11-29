@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { fetchMovie } from "../../redux/actions/MoviesAction";
+import { fetchMovie, setLoading } from "../../redux/actions/MoviesAction";
 import SpinnerLoad from "./SpinnerLoad";
 import { Container, Row, Col } from "react-bootstrap";
 import noimage from "./no-img.png";
@@ -9,6 +9,7 @@ import noimage from "./no-img.png";
 class MovieDetails extends Component {
   componentDidMount() {
     this.props.fetchMovie(this.props.match.params.id);
+    this.props.setLoading();
   }
   render() {
     const { movie, loading } = this.props;
@@ -138,7 +139,7 @@ const mapStateToProps = state => ({
   loading: state.movieslist.loading
 });
 const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ fetchMovie }, dispatch);
+  return bindActionCreators({ fetchMovie, setLoading }, dispatch);
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(MovieDetails);

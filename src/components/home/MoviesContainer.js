@@ -5,14 +5,17 @@ import { Container, Row } from "react-bootstrap";
 class MoviesContainer extends Component {
   render() {
     const { movies } = this.props;
+
     let content =
-      movies.Search && movies.Search.length > 0
-        ? movies.Search.map((movie, index) => (
-            <MovieCard key={index} movie={movie} />
-          ))
-        : null;
+      movies.Search && movies.Search.length > 0 ? (
+        movies.Search.map((movie, index) => (
+          <MovieCard key={index} movie={movie} />
+        ))
+      ) : movies.Response ? (
+        <h3>No movies match your search</h3>
+      ) : null;
     return (
-      <Container className='mb-5 mt-5'>
+      <Container className="mb-5 mt-5">
         <Row>{content}</Row>
       </Container>
     );
